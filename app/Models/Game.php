@@ -30,7 +30,7 @@ class Game extends Model
 
     public function competitors()
     {
-        return $this->hasMany('App\Competitor');
+        return $this->hasMany('App\Models\Competitor');
     }
 
     public function league()
@@ -40,7 +40,7 @@ class Game extends Model
 
     public function teams()
     {
-        return $this->belongsToJson('App\Team', 'teams_id');
+        return $this->belongsToJson('App\Models\Team', 'teams_id');
     }
 
     public function sections()

@@ -32,6 +32,5 @@ class DatabaseSeeder extends Seeder
         $this->call(RacecoursesTableSeeder::class);
 
         $this->call(UsersTableSeeder::class);
-        $this->call(PlayersTableSeeder::class);
     }
 }

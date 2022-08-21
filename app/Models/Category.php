@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\League;
 use App\Traits\ScopeFilterByColumn;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,7 +19,7 @@ class Category extends Model
 
     public function leagues()
     {
-        return $this->hasMany('App\League');
+        return $this->hasMany(League::class);
     }
 
     public function searchableColumns(): array

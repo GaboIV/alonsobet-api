@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Game;
 use App\Traits\ScopeFilterByColumn;
 use Illuminate\Database\Eloquent\Model;
 use Staudenmeir\EloquentJsonRelations\HasJsonRelationships;
@@ -28,7 +29,7 @@ class League extends Model
 
     public function games()
     {
-        return $this->hasMany('App\Game');
+        return $this->hasMany(Game::class);
     }
 
     public function teams()

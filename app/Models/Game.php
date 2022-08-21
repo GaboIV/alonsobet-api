@@ -12,7 +12,7 @@ class Game extends Model
 
     protected $appends = ['encuentro', 'image'];
 
-    protected $with = ['teams'];
+    protected $with = ['teams', 'competitors'];
 
     protected $fillable = [
         'web_id',

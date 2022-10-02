@@ -15,6 +15,7 @@ Route::group(['prefix' => 'v1'], function () {
 
     // LEAGUES
     Route::get('/leagues/by-name-id/{nameId}', 'Api\LeagueController@indexByNameId');
+    Route::get('/leagues/by-category-id/{nameId}', 'Api\LeagueController@indexByCategoryId');
 
     // GAMES
     Route::get('/games/by-league-id/{leagueId}', 'Api\GameController@indexByLeagueId');

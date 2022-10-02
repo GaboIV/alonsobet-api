@@ -27,4 +27,21 @@ class LeagueController extends Controller
             'leagues' => $leagues
         ], 200);
     }
+
+    public function indexByCategoryId(Request $request, $categoryId)
+    {
+        $leagues = League::where('category_id', $categoryId)->with('country')->orderBy('id', 'desc')->get()->toArray();
+
+        foreach ($leagues as $key => &$league) {
+            $league['games_count'] = Game::where('league_id', $league['id'])->where('start', '>', date('Y-m-d H:i:s'))->count();
+
+            if ($league['games_count'] == 0) {
+                array_splice($leagues, $key, 1);
+            }
+        }
+
+        return $this->successResponse([
+            'leagues' => $leagues
+        ], 200);
+    }
 }
